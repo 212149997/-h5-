@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- 网页图标 -->
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- 动态设置网页标题 -->
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
+<script>
+  function resize() { const e = document.documentElement, i = e.clientWidth; window.viewRate = i / 750, e.style.fontSize = 37.5 * window.viewRate + "px" } window.onresize = resize, resize()
+</script>
