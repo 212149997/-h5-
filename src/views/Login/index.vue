@@ -15,8 +15,13 @@
 </template>
 
 <script setup>
+const router = useRouter();
+const username = ref('');
+const password = ref('');
+
 function onSubmit() {
   console.log(222);
+  router.push('/partition');
 }
 </script>
 

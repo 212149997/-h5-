@@ -1,0 +1,15 @@
+<template>
+  <div class="introduction-game"></div>
+</template>
+
+<script setup></script>
+
+<style lang="scss" scoped>
+.introduction-game {
+  width: 100%;
+  height: 100%;
+  background: url('@/images/bg3.png') no-repeat center/contain;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+</style>

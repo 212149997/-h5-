@@ -18,9 +18,27 @@ export default [
     name: 'Login',
     meta: {
       title: '注册/登录',
-      keepAlive: true, //是否缓存路由
+      keepAlive: true,
     },
     component: () => import('@/views/Login/index.vue'),
+  },
+  {
+    path: '/partition',
+    name: 'Partition',
+    meta: {
+      title: '分区',
+      keepAlive: true,
+    },
+    component: () => import('@/views/Partition/index.vue'),
+  },
+  {
+    path: '/introduction-game',
+    name: 'IntroductionGame',
+    meta: {
+      title: '游戏介绍',
+      keepAlive: true,
+    },
+    component: () => import('@/views/IntroductionGame/index.vue'),
   },
   {
     // path: '/404',
