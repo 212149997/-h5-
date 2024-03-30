@@ -21,11 +21,11 @@
     display: flex;
     flex-direction: column;
     margin-top: 14px;
-    margin-left: 60px;
+    margin-left: 160px;
     animation: moveUpDown 2s infinite;
     img {
-      width: 100px;
-      height: 60px;
+      width: 140px;
+      height: 100px;
       &:last-child {
         margin-left: 40px;
       }

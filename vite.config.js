@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
             landscapeWidth: 724,
             landscapeHeight: 355,
             unitToConvert: 'px', // 要转化的单位
-            viewportWidth: 375, // UI设计稿的宽度, 375视口的宽度，对应的时设计稿的宽度/2，一般为750
+            viewportWidth: 750, // UI设计稿的宽度, 375视口的宽度，对应的时设计稿的宽度/2，一般为750
             unitPrecision: 6, // 转换后的精度，即小数点位数
             propList: ['*'], // 指定转换的css属性的单位，*代表全部css属性的单位都进行转换
             viewportUnit: 'vw', // 指定需要转换成的视窗单位，默认vw
