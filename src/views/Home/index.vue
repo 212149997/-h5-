@@ -4,6 +4,9 @@
       <img src="@/images/马拉松健身.png" alt="" />
       <img src="@/images/全景游戏.png" alt="" />
     </div>
+    <div class="home-btn">
+      <img src="@/images/开始.png" alt="" />
+    </div>
   </div>
 </template>
 
@@ -20,14 +23,18 @@
   &-title {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 14px;
-    margin-left: 160px;
     animation: moveUpDown 2s infinite;
+    padding-right: 300px;
     img {
       width: 140px;
       height: 100px;
+      &:first-child {
+        margin-right: 80px;
+      }
       &:last-child {
-        margin-left: 40px;
+        margin-left: 80px;
       }
     }
     @keyframes moveUpDown {
@@ -40,6 +47,14 @@
       100% {
         transform: translateY(0);
       }
+    }
+  }
+  &-btn {
+    margin-top: 20px;
+    img {
+      width: 100px;
+      height: 50px;
+      margin-left: 200px;
     }
   }
 }
