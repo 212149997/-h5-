@@ -4,13 +4,37 @@
       <img src="@/images/马拉松健身.png" alt="" />
       <img src="@/images/全景游戏.png" alt="" />
     </div>
-    <div class="home-btn">
+    <div class="home-btn" @click="handleStart">
       <img src="@/images/开始.png" alt="" />
+    </div>
+    <div class="home-music" @click="handleMusic">
+      <img v-show="playMusic" src="@/images/音乐播放.png" alt="" />
+      <img v-show="!playMusic" src="@/images/音乐暂停.png" alt="" />
+      <audio ref="refAudio" autoplay="autoplay" loop="loop" preload="auto" :src="audio"></audio>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import audio from '@/images/home-music.mp3';
+
+const router = useRouter();
+const refAudio = ref(null);
+const playMusic = ref(false);
+
+function handleMusic() {
+  if (playMusic.value) {
+    refAudio.value.pause();
+  } else {
+    refAudio.value.play();
+  }
+  playMusic.value = !playMusic.value;
+}
+
+function handleStart() {
+  router.push('/login');
+}
+</script>
 
 <style lang="scss" scoped>
 .home {
@@ -18,23 +42,25 @@
   height: 100%;
   background: url('@/images/bg.png') no-repeat center/contain;
   background-size: 100% 100%;
-  z-index: -1;
   overflow: hidden;
+  position: relative;
   &-title {
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 14px;
     animation: moveUpDown 2s infinite;
-    padding-right: 300px;
+    margin-left: 300px;
     img {
-      width: 140px;
-      height: 100px;
+      width: 440px;
+      height: 150px;
+      object-fit: contain;
       &:first-child {
-        margin-right: 80px;
+        margin-left: 150px;
       }
       &:last-child {
-        margin-left: 80px;
+        margin-right: 100px;
       }
     }
     @keyframes moveUpDown {
@@ -52,10 +78,16 @@
   &-btn {
     margin-top: 20px;
     img {
-      width: 100px;
-      height: 50px;
-      margin-left: 500px;
+      width: 200px;
+      height: 150px;
+      margin-left: 450px;
+      object-fit: contain;
     }
+  }
+  &-music {
+    position: absolute;
+    top: 20px;
+    left: 20px;
   }
 }
 </style>

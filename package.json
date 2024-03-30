@@ -12,10 +12,12 @@
     "deploy": "pnpm run build:pro && git add . && git commit -m \"gitee自动部署\" && git push -u origin master && git subtree push --prefix dist-pro origin gh-pages"
   },
   "dependencies": {
+    "vant": "^4.8.7",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@vant/auto-import-resolver": "^1.1.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
@@ -26,6 +28,7 @@
     "prettier": "3.0.3",
     "sass": "^1.69.0",
     "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.26.0",
     "vite": "^4.4.5",
     "vite-plugin-html": "^3.2.0"
   }

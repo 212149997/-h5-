@@ -14,6 +14,15 @@ export default [
     component: () => import('@/views/Home/index.vue'),
   },
   {
+    path: '/login',
+    name: 'Login',
+    meta: {
+      title: '注册/登录',
+      keepAlive: true, //是否缓存路由
+    },
+    component: () => import('@/views/Login/index.vue'),
+  },
+  {
     // path: '/404',
     path: '/:pathMatch(.*)*', // 防止浏览器刷新时路由未找到警告提示:No match found for location with path "/xxx"
     meta: {
