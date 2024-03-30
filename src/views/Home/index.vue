@@ -34,11 +34,6 @@ function handleMusic() {
 function handleStart() {
   router.push('/login');
 }
-
-onMounted(() => {
-  refAudio.value.play();
-  playMusic.value = !playMusic.value;
-});
 </script>
 
 <style lang="scss" scoped>
