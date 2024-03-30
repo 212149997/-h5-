@@ -54,7 +54,7 @@
     img {
       width: 100px;
       height: 50px;
-      margin-left: 200px;
+      margin-left: 500px;
     }
   }
 }
