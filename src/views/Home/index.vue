@@ -11,8 +11,10 @@
 
 <style lang="scss" scoped>
 .home {
-  min-height: 100vh;
-  background: url('@/images/bg.png') no-repeat center/cover;
+  width: 100%;
+  height: 100%;
+  background: url('@/images/bg.png') no-repeat center/contain;
+  background-size: 100% 100%;
   z-index: -1;
   overflow: hidden;
   &-title {
