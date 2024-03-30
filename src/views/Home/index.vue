@@ -13,21 +13,30 @@
 .home {
   min-height: 100vh;
   background: url('@/images/bg.png') no-repeat center/cover;
-  background-position: 0 100%;
-  background-size: 100% 57%;
   z-index: -1;
-  position: relative;
+  overflow: hidden;
   &-title {
-    position: absolute;
-    bottom: 350px;
-    left: 500px;
     display: flex;
     flex-direction: column;
+    margin-top: 14px;
+    margin-left: 60px;
+    animation: moveUpDown 2s infinite;
     img {
-      width: 250px;
-      height: 160px;
+      width: 100px;
+      height: 60px;
       &:last-child {
-        margin-left: 100px;
+        margin-left: 40px;
+      }
+    }
+    @keyframes moveUpDown {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
       }
     }
   }

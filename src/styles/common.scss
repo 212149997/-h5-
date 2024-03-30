@@ -1,9 +1,19 @@
-body {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+// body {
+//   -webkit-transform: rotate(90deg);
+//   -moz-transform: rotate(90deg);
+//   -ms-transform: rotate(90deg);
+//   transform: rotate(90deg);
+//   width: 100vh;
+//   height: 100vh;
+//   overflow: hidden;
+// }
+
+/* 被js覆盖了，好像没用 */
+#app {
+  transform: rotate(90deg); //顺时针旋转90度
+  transform-origin: 0% 100%;
+  top: -90vw;
+  position: absolute;
+  height: 100vw; //宽高单位互换
   width: 100vh;
-  height: 100vh;
-  overflow: hidden;
 }

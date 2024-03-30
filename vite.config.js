@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import { join } from 'path';
-import postCssPxToRem from 'postcss-pxtorem';
+import postcsspxtoviewport from 'postcss-px-to-viewport';
 
 export default defineConfig(({ mode }) => {
   // 获取`.env`环境配置文件
@@ -13,10 +13,21 @@ export default defineConfig(({ mode }) => {
     css: {
       postcss: {
         plugins: [
-          postCssPxToRem({
-            //自适应，px>rem转换
-            rootValue: 37.5, //75表示750设计稿，37.5表示375设计稿
-            propList: ['*'], //要转换的属性，这里选择全部都进行
+          postcsspxtoviewport({
+            //配置landscapeWidth和landscapeHeight，否则真实横屏样式会出现错乱
+            landscapeWidth: 724,
+            landscapeHeight: 355,
+            unitToConvert: 'px', // 要转化的单位
+            viewportWidth: 375, // UI设计稿的宽度, 375视口的宽度，对应的时设计稿的宽度/2，一般为750
+            unitPrecision: 6, // 转换后的精度，即小数点位数
+            propList: ['*'], // 指定转换的css属性的单位，*代表全部css属性的单位都进行转换
+            viewportUnit: 'vw', // 指定需要转换成的视窗单位，默认vw
+            fontViewportUnit: 'vw', // 指定字体需要转换成的视窗单位，默认vw
+            selectorBlackList: ['ignore-'], // 指定不转换为视窗单位的类名，
+            minPixelValue: 1, // 默认值1，小于或等于1px则不进行转换
+            mediaQuery: true, // 是否在媒体查询的css代码中也进行转换，默认false
+            replace: true, // 是否转换后直接更换属性值
+            landscape: false, // 是否处理横屏情况
           }),
         ],
       },

@@ -8,10 +8,10 @@
     "build:pro": "vite build --mode pro",
     "build:test": "vite build --mode test",
     "build:dev": "vite build --mode dev",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "pnpm run build:pro && git add . && git commit -m \"gitee自动部署\" && git push -u origin master && git subtree push --prefix dist-pro origin gh-pages"
   },
   "dependencies": {
-    "postcss-pxtorem": "^6.1.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
@@ -21,6 +21,8 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.17.0",
+    "postcss": "^8.4.38",
+    "postcss-px-to-viewport": "^1.1.1",
     "prettier": "3.0.3",
     "sass": "^1.69.0",
     "unplugin-auto-import": "^0.16.6",

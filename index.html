@@ -19,6 +19,19 @@
 </body>
 
 </html>
+
 <script>
-  function resize() { const e = document.documentElement, i = e.clientWidth; window.viewRate = i / 750, e.style.fontSize = 37.5 * window.viewRate + "px" } window.onresize = resize, resize()
+  function resize() {
+    const root = document.querySelector("#app")
+    if (window.orientation == 180 || window.orientation == 0) {
+      // alert("竖屏状态！")
+      root.setAttribute("style", ' transform: rotate(90deg);transform-origin: 0% 100%;top: -100vw;position: absolute;height: 100vw;width: 100vh')
+    }
+    if (window.orientation == 90 || window.orientation == -90) {
+      // alert("横屏状态！")
+      root.setAttribute("style", ' transform: unset;transform-origin:unset;top: 0;left:0;position: absolute;height: 100%;width: 100%')
+    }
+  }
+  resize()
+  window.addEventListener('orientationchange', resize);//监听旋转方向
 </script>
