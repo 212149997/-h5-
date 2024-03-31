@@ -19,7 +19,7 @@ function handleBtn(key) {
       router.push('/');
       break;
     case 2:
-      router.push('/');
+      router.push('/my');
       break;
   }
 }
