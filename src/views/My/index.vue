@@ -139,7 +139,7 @@ function handleLogout() {}
   width: 100%;
   height: 100%;
   padding: 30px 80px;
-  overflow: scroll;
+  overflow-y: scroll;
   .header {
     width: 100%;
     display: flex;
@@ -196,6 +196,7 @@ function handleLogout() {}
   .middle,
   .bottom {
     width: 100%;
+    height: 100%;
     // margin-left: 180px;
   }
 
