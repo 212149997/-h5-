@@ -1,58 +1,60 @@
 <template>
   <div class="my">
-    <div class="header">
-      <div class="left">
-        <img class="my-icon" src="@/images/my-icon.png" alt="" />
-        <img class="avatar" src="@/images/头像.png" alt="" />
-        <div class="info">
-          <span class="name">Inspectorrrrrr</span>
-          <div>
-            <div class="num-box">
-              <span>关注</span>
-              <span>3</span>
-            </div>
-            <div class="num-box">
-              <span>粉丝</span>
-              <span>2</span>
+    <div class="my-content">
+      <div class="header">
+        <div class="left">
+          <img class="my-icon" src="@/images/my-icon.png" alt="" />
+          <img class="avatar" src="@/images/头像.png" alt="" />
+          <div class="info">
+            <span class="name">Inspectorrrrrr</span>
+            <div>
+              <div class="num-box">
+                <span>关注</span>
+                <span>3</span>
+              </div>
+              <div class="num-box">
+                <span>粉丝</span>
+                <span>2</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="right">
-        <img src="@/images/兑换商城.png" alt="" @click="handleIcon(0)" />
-        <img src="@/images/设置.png" alt="" @click="handleIcon(1)" />
-      </div>
-    </div>
-    <div class="middle">
-      <div class="title">我的数据</div>
-      <div class="content">
-        <div class="item">
-          <span>0分钟</span>
-          <span>本周跑步</span>
-        </div>
-        <div class="item">
-          <span>00.00km</span>
-          <span>跑步距离</span>
-        </div>
-        <div class="item">
-          <span>0个</span>
-          <span>跑步币</span>
-        </div>
-        <div class="line">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div class="right">
+          <img src="@/images/兑换商城.png" alt="" @click="handleIcon(0)" />
+          <img src="@/images/设置.png" alt="" @click="handleIcon(1)" />
         </div>
       </div>
-    </div>
-    <div class="bottom">
-      <div class="title">反馈与建议</div>
-      <van-cell-group inset>
-        <van-field v-model="message" rows="2" autosize type="textarea" placeholder="请输入文字..." />
-      </van-cell-group>
-      <div class="btn">
-        <img src="@/images/提交.png" alt="" />
+      <div class="middle">
+        <div class="title">我的数据</div>
+        <div class="content">
+          <div class="item">
+            <span>0分钟</span>
+            <span>本周跑步</span>
+          </div>
+          <div class="item">
+            <span>00.00km</span>
+            <span>跑步距离</span>
+          </div>
+          <div class="item">
+            <span>0个</span>
+            <span>跑步币</span>
+          </div>
+          <div class="line">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="title">反馈与建议</div>
+        <van-cell-group inset>
+          <van-field v-model="message" rows="2" autosize type="textarea" placeholder="请输入文字..." />
+        </van-cell-group>
+        <div class="btn">
+          <img src="@/images/提交.png" alt="" />
+        </div>
       </div>
     </div>
     <van-overlay :show="showSetting" @click="showSetting = false">
@@ -135,11 +137,16 @@ function handleLogout() {}
 
 <style lang="scss" scoped>
 .my {
-  background-color: #f5f5f5;
   width: 100%;
   height: 100%;
   padding: 30px 80px;
-  overflow-y: scroll;
+  background-color: #fbd1db;
+  .my-content {
+    overflow: scroll;
+    height: 100%;
+    background-color: #fbd1db;
+    padding-bottom: 20px;
+  }
   .header {
     width: 100%;
     display: flex;

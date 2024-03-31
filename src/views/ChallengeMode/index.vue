@@ -26,7 +26,7 @@
         </div>
         <div class="right" @click="handleFriend">
           <van-popover v-model:show="showPopover" placement="top">
-            <div class="friend-box">
+            <div class="friend-box" :class="isAndroid && 'friend-box-android'">
               <img src="@/images/弹框.png" alt="" />
               <div class="small-person">
                 <img src="@/images/小人.png" alt="" @click="handleSmallPerson" />
@@ -86,6 +86,8 @@
 </template>
 
 <script setup>
+import { isAndroid } from '@/utils';
+
 const talk = ref(false);
 const showRes = ref(false);
 const showPopover = ref(false);
@@ -125,12 +127,13 @@ function handleSmallPerson() {
 .challenge-mode {
   width: 100%;
   height: 100%;
-  background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 200px;
   overflow: hidden;
+  background-color: #fbd1db;
+
   .wrapper1 {
     display: flex;
     align-items: center;
@@ -308,6 +311,9 @@ function handleSmallPerson() {
     }
   }
 }
+::v-deep(.van-popover__content) {
+  position: relative;
+}
 .friend-box {
   position: relative;
   width: 450px;
@@ -341,6 +347,14 @@ function handleSmallPerson() {
     left: -220px;
     bottom: -50px;
   }
+}
+.friend-box-android {
+  position: absolute;
+  width: 450px;
+  height: 350px;
+  transform: rotate(-270deg);
+  left: -10px;
+  bottom: -210px;
 }
 ::v-deep(.van-popover__content) {
   background-color: unset;
