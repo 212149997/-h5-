@@ -16,7 +16,7 @@ function handleBtn(key) {
       router.push('/introduction-game');
       break;
     case 1:
-      router.push('/');
+      router.push('/selection-mode');
       break;
     case 2:
       router.push('/my');

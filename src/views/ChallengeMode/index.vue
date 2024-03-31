@@ -26,10 +26,14 @@
         </div>
         <div class="right" @click="handleFriend">
           <van-popover v-model:show="showPopover" placement="top">
-            <!-- <van-grid square clickable :border="false" column-num="3" style="width: 200px">
-              <van-grid-item v-for="i in 6" :key="i" text="选项" icon="photo-o" @click="showPopover = false" />
-            </van-grid> -->
-            <img src="@/images/弹框.png" alt="" style="width: 200px; height: 150px" @click="showPopover = false" />
+            <div class="friend-box">
+              <img src="@/images/弹框.png" alt="" />
+              <div class="small-person">
+                <img src="@/images/小人.png" alt="" @click="handleSmallPerson" />
+                <img src="@/images/小人.png" alt="" @click="handleSmallPerson" />
+                <img src="@/images/小人.png" alt="" @click="handleSmallPerson" />
+              </div>
+            </div>
             <template #reference>
               <img src="@/images/好友.png" alt="" />
             </template>
@@ -110,6 +114,10 @@ function handleControl(key) {
 function handleHome() {
   showRes.value = false;
   router.back();
+}
+
+function handleSmallPerson() {
+  showPopover.value = false;
 }
 </script>
 
@@ -299,5 +307,44 @@ function handleHome() {
       }
     }
   }
+}
+.friend-box {
+  position: relative;
+  width: 450px;
+  height: 350px;
+  .small-person {
+    position: absolute;
+    left: 150px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 110px;
+    & > img {
+      width: 40px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 50px;
+      &:nth-child(1) {
+        margin-bottom: 40px;
+      }
+      &:nth-child(2) {
+        margin-bottom: 45px;
+      }
+    }
+  }
+  & > img {
+    width: 450px;
+    height: 350px;
+    object-fit: contain;
+    position: absolute;
+    left: -220px;
+    bottom: -50px;
+  }
+}
+::v-deep(.van-popover__content) {
+  background-color: unset;
+  box-shadow: unset;
+  overflow: unset;
 }
 </style>

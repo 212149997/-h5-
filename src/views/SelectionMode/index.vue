@@ -1,8 +1,14 @@
 <template>
   <div class="selection-mode">
-    <div>训练模式</div>
-    <div @click="showTrack = true">挑战模式</div>
-    <div>数据分析</div>
+    <div>
+      <img src="@/images/训练模式.png" alt="" />
+    </div>
+    <div @click="showTrack = true">
+      <img src="@/images/挑战模式.png" alt="" />
+    </div>
+    <div>
+      <img src="@/images/数据分析.png" alt="" />
+    </div>
     <van-overlay :show="showTrack" :lock-scroll="false" @click="showTrack = false">
       <div class="wrapper1">
         <div class="block" @click.stop>
@@ -46,9 +52,16 @@ function handleImg() {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: url('@/images/bg5.png') no-repeat center/contain;
+  background-size: 100% 100%;
+  overflow: hidden;
+  padding-left: 250px;
   & > div {
     flex: 1;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .wrapper1 {

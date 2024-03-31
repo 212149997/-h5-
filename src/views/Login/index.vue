@@ -67,6 +67,8 @@ function onSubmit() {
   &-form {
     margin-top: 220px;
     margin-left: 50px;
+    background-color: #faebeb;
+    border-radius: 20px;
     ::v-deep(.van-cell) {
       background-color: unset;
       &::after {
@@ -79,7 +81,11 @@ function onSubmit() {
       }
     }
     ::v-deep(.van-cell-group) {
-      background-color: rgba($color: #fed1db, $alpha: 0.4);
+      // background-color: rgba($color: #fed1db, $alpha: 0.4);
+      background-color: unset;
+    }
+    ::v-deep(.van-button) {
+      height: 60px;
     }
   }
 }
