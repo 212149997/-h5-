@@ -10,13 +10,13 @@
     <div class="home-music" @click="handleMusic">
       <img v-show="playMusic" src="@/images/音乐播放.png" alt="" />
       <img v-show="!playMusic" src="@/images/音乐暂停.png" alt="" />
-      <audio ref="refAudio" autoplay="autoplay" loop="loop" preload="auto" :src="audio"></audio>
+      <!-- <audio ref="refAudio" autoplay="autoplay" loop="loop" preload="auto" :src="audio"></audio> -->
     </div>
   </div>
 </template>
 
 <script setup>
-import audio from '@/images/home-music.mp3';
+// import audio from '@/images/home-music.mp3';
 
 const router = useRouter();
 const refAudio = ref(null);
@@ -76,11 +76,12 @@ function handleStart() {
     }
   }
   &-btn {
-    margin-top: 20px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
     img {
       width: 200px;
       height: 150px;
-      margin-left: 450px;
       object-fit: contain;
     }
   }

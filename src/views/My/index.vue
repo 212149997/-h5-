@@ -195,9 +195,7 @@ function handleLogout() {}
   }
   .middle,
   .bottom {
-    width: 100%;
-    height: 100%;
-    // margin-left: 180px;
+    margin-left: 180px;
   }
 
   .middle {
