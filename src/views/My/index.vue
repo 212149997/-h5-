@@ -139,7 +139,9 @@ function handleLogout() {}
   width: 100%;
   height: 100%;
   padding: 30px 80px;
-  overflow: hidden;
+  overflow-y: scroll;
+  background: url('@/images/bg1.png') no-repeat center/contain;
+  background-size: 100% 100%;
   .header {
     display: flex;
     align-items: center;
