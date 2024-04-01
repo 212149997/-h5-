@@ -38,6 +38,7 @@
       </van-form>
     </div>
   </div>
+  <Back />
 </template>
 
 <script setup>

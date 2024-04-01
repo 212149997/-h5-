@@ -6,6 +6,7 @@
       <img src="@/images/个人中心.png" alt="" @click="handleBtn(2)" />
     </div>
   </div>
+  <Back />
 </template>
 
 <script setup>

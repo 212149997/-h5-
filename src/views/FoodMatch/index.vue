@@ -1,15 +1,15 @@
 <template>
   <Back />
-  <div class="introduction-game"></div>
+  <div class="food-match"></div>
 </template>
 
 <script setup></script>
 
 <style lang="scss" scoped>
-.introduction-game {
+.food-match {
   width: 100%;
   height: 100%;
-  background: url('@/images/bg3.png') no-repeat center/contain;
+  background: url('@/images/饮食搭配.png') no-repeat center/contain;
   background-size: 100% 100%;
   overflow: hidden;
 }

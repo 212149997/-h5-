@@ -1,13 +1,14 @@
 <template>
+  <Back />
   <div class="selection-mode">
     <div>
-      <img src="@/images/训练模式.png" alt="" />
-    </div>
-    <div @click="showTrack = true">
-      <img src="@/images/挑战模式.png" alt="" />
+      <img src="@/images/训练模式.png" alt="" @click="handleMode(0)" />
     </div>
     <div>
-      <img src="@/images/数据分析.png" alt="" />
+      <img src="@/images/挑战模式.png" alt="" @click="handleMode(1)" />
+    </div>
+    <div>
+      <img src="@/images/数据分析.png" alt="" @click="handleMode(2)" />
     </div>
     <van-overlay :show="showTrack" :lock-scroll="false" @click="showTrack = false">
       <div class="wrapper1">
@@ -39,6 +40,18 @@ const showTrack = ref(false);
 const imgList = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 const router = useRouter();
 
+function handleMode(key) {
+  switch (key) {
+    case 0:
+      router.push('/train-mode');
+      break;
+    case 1:
+      showTrack.value = true;
+      break;
+    case 2:
+      break;
+  }
+}
 function handleImg() {
   showTrack.value = false;
   router.push('/challenge-mode');

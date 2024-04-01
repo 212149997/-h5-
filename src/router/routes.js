@@ -8,6 +8,7 @@ export default [
     path: '/home',
     name: 'Home',
     meta: {
+      title: '马拉松健身全景游戏',
       keepAlive: true, //是否缓存路由
     },
     component: () => import('@/views/Home/index.vue'),
@@ -65,6 +66,41 @@ export default [
       keepAlive: true,
     },
     component: () => import('@/views/ChallengeMode/index.vue'),
+  },
+  {
+    path: '/train-mode',
+    name: 'TrainMode',
+    meta: {
+      title: '训练模式',
+      keepAlive: true,
+    },
+    component: () => import('@/views/TrainMode/index.vue'),
+  },
+  {
+    path: '/running-instructor',
+    name: 'RunningInstructor',
+    meta: {
+      title: '跑步指导',
+    },
+    component: () => import('@/views/RunningInstructor/index.vue'),
+  },
+  {
+    path: '/food-match',
+    name: 'FoodMatch',
+    meta: {
+      title: '饮食搭配',
+      keepAlive: true,
+    },
+    component: () => import('@/views/FoodMatch/index.vue'),
+  },
+  {
+    path: '/individuation',
+    name: 'Individuation',
+    meta: {
+      title: '个性化训练',
+      keepAlive: true,
+    },
+    component: () => import('@/views/Individuation/index.vue'),
   },
   {
     path: '/:pathMatch(.*)*', // 防止浏览器刷新时路由未找到警告提示:No match found for location with path "/xxx"

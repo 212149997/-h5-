@@ -1,4 +1,5 @@
 <template>
+  <Back />
   <div class="challenge-mode">
     <div class="top">
       <div class="time">00：00：00</div>

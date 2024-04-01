@@ -1,4 +1,5 @@
 <template>
+  <Back />
   <div class="my">
     <div class="my-content">
       <div class="header">
@@ -203,10 +204,6 @@ function handleLogout() {
         }
       }
     }
-  }
-  .middle,
-  .bottom {
-    margin-left: 180px;
   }
 
   .middle {
