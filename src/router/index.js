@@ -18,4 +18,14 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+/* 清空路由 */
+export const resetRouter = () => {
+  router.getRoutes().forEach((route) => {
+    const { name } = route;
+    if (name) {
+      router.hasRoute(name) && router.removeRoute(name);
+    }
+  });
+};
+
 export default router;

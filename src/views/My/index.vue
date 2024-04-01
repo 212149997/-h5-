@@ -122,6 +122,8 @@ const checkeDown = ref('1');
 const showSetting = ref(false);
 const showGift = ref(false);
 
+const router = useRouter();
+
 function handleIcon(key) {
   switch (key) {
     case 0:
@@ -132,7 +134,9 @@ function handleIcon(key) {
       break;
   }
 }
-function handleLogout() {}
+function handleLogout() {
+  router.push('/home');
+}
 </script>
 
 <style lang="scss" scoped>
