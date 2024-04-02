@@ -49,6 +49,7 @@ function handleMode(key) {
       showTrack.value = true;
       break;
     case 2:
+      router.push('/data-analysis');
       break;
   }
 }
@@ -95,6 +96,8 @@ function handleImg() {
       display: flex;
       flex-direction: column;
       position: relative;
+      background: url('@/images/跑道背景图.png') no-repeat center/contain;
+      background-size: 100% 100%;
       .title {
         position: absolute;
         top: 20px;

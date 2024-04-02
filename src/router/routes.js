@@ -112,6 +112,15 @@ export default [
     component: () => import('@/views/Individuation/index.vue'),
   },
   {
+    path: '/data-analysis',
+    name: 'DataAnalysis',
+    meta: {
+      title: '数据分析',
+      keepAlive: true,
+    },
+    component: () => import('@/views/DataAnalysis/index.vue'),
+  },
+  {
     path: '/:pathMatch(.*)*', // 防止浏览器刷新时路由未找到警告提示:No match found for location with path "/xxx"
     meta: {
       title: '404',

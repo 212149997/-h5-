@@ -1,0 +1,1 @@
+import{_ as c,o as _,c as s,e as t,F as a,p as n,d,a as p,l as r}from"./index-dba00268.js";const l={},i=e=>(n("data-v-88db574e"),e=e(),d(),e),u=i(()=>p("div",{class:"introduction-game"},null,-1));function m(e,f){const o=r;return _(),s(a,null,[t(o),u],64)}const v=c(l,[["render",m],["__scopeId","data-v-88db574e"]]);export{v as default};

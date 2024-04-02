@@ -13,6 +13,7 @@
       <div class="vr">
         <img src="@/images/vr.png" alt="" />
       </div>
+      <video ref="refVideo" :src="video"></video>
     </div>
     <div class="bottom">
       <div class="btn-box">
@@ -87,8 +88,10 @@
 </template>
 
 <script setup>
+import video from '@/images/video.mp4';
 import { isAndroid } from '@/utils';
 
+const refVideo = ref(null);
 const talk = ref(false);
 const showRes = ref(false);
 const showPopover = ref(false);
@@ -101,11 +104,15 @@ function handleTalk() {
 function handleControl(key) {
   switch (key) {
     case 0:
+      refVideo.value.play();
       break;
     case 1:
+      refVideo.value.pause();
       break;
     case 2:
       showRes.value = true;
+      refVideo.value.pause(); // 暂停视频
+      refVideo.value.currentTime = 0; // 将视频时间设置为0，即回到开头
       break;
   }
 }
@@ -273,11 +280,18 @@ function handleSmallPerson() {
       position: absolute;
       top: 15px;
       left: 25px;
+      z-index: 2;
       img {
         width: 36px;
         height: 29px;
         object-fit: contain;
       }
+    }
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
   & > .bottom {

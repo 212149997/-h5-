@@ -1,1 +1,0 @@
-import{_ as o,o as _,c as a,e as n,F as s,p as t,d,a as i,l as p}from"./index-b4ce67a0.js";const r={},l=e=>(t("data-v-05cb8bde"),e=e(),d(),e),u=l(()=>i("div",{class:"individuation"},"individuation",-1));function m(e,v){const c=p;return _(),a(s,null,[n(c),u],64)}const f=o(r,[["render",m],["__scopeId","data-v-05cb8bde"]]);export{f as default};

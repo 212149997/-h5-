@@ -4,19 +4,19 @@
       <img src="@/images/马拉松健身.png" alt="" />
       <img src="@/images/全景游戏.png" alt="" />
     </div>
-    <div class="home-btn" @click="handleStart">
-      <img src="@/images/开始.png" alt="" />
+    <div class="home-btn">
+      <img src="@/images/开始.png" alt="" @click="handleStart" />
     </div>
     <div class="home-music" @click="handleMusic">
       <img v-show="playMusic" src="@/images/音乐播放.png" alt="" />
       <img v-show="!playMusic" src="@/images/音乐暂停.png" alt="" />
-      <!-- <audio ref="refAudio" autoplay="autoplay" loop="loop" preload="auto" :src="audio"></audio> -->
+      <audio ref="refAudio" autoplay="autoplay" loop="loop" preload="auto" :src="audio"></audio>
     </div>
   </div>
 </template>
 
 <script setup>
-// import audio from '@/images/home-music.mp3';
+import audio from '@/images/music.mp3';
 
 const router = useRouter();
 const refAudio = ref(null);
