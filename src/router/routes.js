@@ -68,6 +68,15 @@ export default [
     component: () => import('@/views/ChallengeMode/index.vue'),
   },
   {
+    path: '/pk',
+    name: 'Pk',
+    meta: {
+      title: 'Pk',
+      keepAlive: true,
+    },
+    component: () => import('@/views/Pk/index.vue'),
+  },
+  {
     path: '/train-mode',
     name: 'TrainMode',
     meta: {

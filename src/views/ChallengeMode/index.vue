@@ -25,7 +25,7 @@
           <img v-show="talk" src="@/images/讲.png" alt="" />
           <img v-show="!talk" src="@/images/不讲.png" alt="" />
         </div>
-        <div class="right" @click="handleFriend">
+        <div class="right">
           <van-popover v-model:show="showPopover" placement="top">
             <div class="friend-box" :class="isAndroid && 'friend-box-android'">
               <img src="@/images/弹框.png" alt="" />
@@ -98,10 +98,6 @@ function handleTalk() {
   talk.value = !talk.value;
 }
 
-function handleFriend() {
-  // showPopover.value = true;
-}
-
 function handleControl(key) {
   switch (key) {
     case 0:
@@ -121,6 +117,7 @@ function handleHome() {
 
 function handleSmallPerson() {
   showPopover.value = false;
+  router.push('/pk');
 }
 </script>
 

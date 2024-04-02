@@ -1,6 +1,6 @@
 <template>
   <Back />
-  <div class="individuation"></div>
+  <div class="individuation">individuation</div>
 </template>
 
 <script setup></script>

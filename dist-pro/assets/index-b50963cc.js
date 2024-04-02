@@ -1,1 +1,0 @@
-import{_ as o,o as _,c as s,e as a,F as n,p as t,d,a as p,l as i}from"./index-9dfddb86.js";const r={},l=e=>(t("data-v-cbb591b5"),e=e(),d(),e),u=l(()=>p("div",{class:"individuation"},null,-1));function b(e,m){const c=i;return _(),s(n,null,[a(c),u],64)}const v=o(r,[["render",b],["__scopeId","data-v-cbb591b5"]]);export{v as default};

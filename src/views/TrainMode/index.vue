@@ -26,6 +26,7 @@ function handleBtn(key) {
       router.push('/food-match');
       break;
     case 2:
+      router.push('/individuation');
       break;
   }
 }
