@@ -40,7 +40,7 @@
             <span>0个</span>
             <span>跑步币</span>
           </div>
-          <div class="line">
+          <div class="line" @click="handleLine">
             <div></div>
             <div></div>
             <div></div>
@@ -137,6 +137,9 @@ function handleIcon(key) {
 }
 function handleLogout() {
   router.push('/home');
+}
+function handleLine() {
+  router.push('/data-analysis');
 }
 </script>
 

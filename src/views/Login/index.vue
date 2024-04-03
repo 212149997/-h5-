@@ -43,8 +43,8 @@
 
 <script setup>
 const router = useRouter();
-const username = ref('admin');
-const password = ref('admin');
+const username = ref('Inspectorrrrrr');
+const password = ref('Inspectorrrrrr');
 const age = ref(18);
 const checkedSex = ref('1');
 const checkedFitness = ref('2');

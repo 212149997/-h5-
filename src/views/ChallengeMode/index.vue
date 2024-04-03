@@ -13,7 +13,7 @@
       <div class="vr">
         <img src="@/images/vr.png" alt="" />
       </div>
-      <video ref="refVideo" :src="video"></video>
+      <video ref="refVideo" :src="video" preload="auto"></video>
     </div>
     <div class="bottom">
       <div class="btn-box">
@@ -25,6 +25,7 @@
         <div class="left" @click="handleTalk">
           <img v-show="talk" src="@/images/讲.png" alt="" />
           <img v-show="!talk" src="@/images/不讲.png" alt="" />
+          <audio ref="refAudio" loop="loop" preload="auto" :src="audio"></audio>
         </div>
         <div class="right">
           <van-popover v-model:show="showPopover" placement="top">
@@ -89,8 +90,10 @@
 
 <script setup>
 import video from '@/images/video.mp4';
+import audio from '@/images/music.mp3';
 import { isAndroid } from '@/utils';
 
+const refAudio = ref(null);
 const refVideo = ref(null);
 const talk = ref(false);
 const showRes = ref(false);
@@ -98,6 +101,11 @@ const showPopover = ref(false);
 const router = useRouter();
 
 function handleTalk() {
+  if (talk.value) {
+    refAudio.value.pause();
+  } else {
+    refAudio.value.play();
+  }
   talk.value = !talk.value;
 }
 
@@ -139,6 +147,9 @@ function handleSmallPerson() {
   overflow: hidden;
   background-color: #fbd1db;
 
+  :deep(.van-overlay) {
+    z-index: 10;
+  }
   .wrapper1 {
     display: flex;
     align-items: center;

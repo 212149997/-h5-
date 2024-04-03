@@ -10,7 +10,7 @@
     <div class="home-music" @click="handleMusic">
       <img v-show="playMusic" src="@/images/音乐播放.png" alt="" />
       <img v-show="!playMusic" src="@/images/音乐暂停.png" alt="" />
-      <audio ref="refAudio" autoplay="autoplay" loop="loop" preload="auto" :src="audio"></audio>
+      <audio ref="refAudio" loop="loop" preload="auto" :src="audio"></audio>
     </div>
   </div>
 </template>
@@ -53,14 +53,15 @@ function handleStart() {
     animation: moveUpDown 2s infinite;
     margin-left: 300px;
     img {
-      width: 440px;
-      height: 150px;
+      width: 600px;
+      height: 300px;
       object-fit: contain;
+      margin-top: -80px;
       &:first-child {
         margin-left: 150px;
       }
       &:last-child {
-        margin-right: 100px;
+        margin-right: 200px;
       }
     }
     @keyframes moveUpDown {
@@ -76,7 +77,7 @@ function handleStart() {
     }
   }
   &-btn {
-    margin-top: 80px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     img {
