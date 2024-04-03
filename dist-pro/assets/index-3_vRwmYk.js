@@ -1,0 +1,1 @@
+import{_ as c,c as a,e as s,F as t,o as n,p as _,d,a as p,l as r}from"./index-Rp16z-Hu.js";const l={},i=e=>(_("data-v-88db574e"),e=e(),d(),e),u=i(()=>p("div",{class:"introduction-game"},null,-1));function m(e,f){const o=r;return n(),a(t,null,[s(o),u],64)}const x=c(l,[["render",m],["__scopeId","data-v-88db574e"]]);export{x as default};

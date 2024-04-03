@@ -56,12 +56,13 @@ function handleStart() {
       width: 600px;
       height: 300px;
       object-fit: contain;
-      margin-top: -80px;
       &:first-child {
         margin-left: 150px;
+        margin-top: -40px;
       }
       &:last-child {
         margin-right: 200px;
+        margin-top: -120px;
       }
     }
     @keyframes moveUpDown {
@@ -77,7 +78,7 @@ function handleStart() {
     }
   }
   &-btn {
-    margin-top: 20px;
+    margin-top: -40px;
     display: flex;
     justify-content: center;
     img {
