@@ -2,12 +2,12 @@
   <Back />
   <div class="challenge-mode">
     <div class="top">
-      <div class="time">00：00：00</div>
+      <div class="time">{{ formattedTime }}</div>
       <div class="love">
         <img src="@/images/爱心.png" alt="" />
-        <span>70次/分</span>
+        <span>{{ heartRate }}次/分</span>
       </div>
-      <div class="km">00.00km</div>
+      <div class="km">{{ km.toFixed(2) }}km</div>
     </div>
     <div class="middle">
       <div class="vr">
@@ -89,11 +89,17 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import video from '@/images/video.mp4';
 import audio from '@/images/music.mp3';
 import { isAndroid } from '@/utils';
 
 const refAudio = ref(null);
+const formattedTime = ref('00：00：00');
+const heartRate = ref(70);
+const km = ref(0);
+const timer = ref(null);
+
 const refVideo = ref(null);
 const talk = ref(false);
 const showRes = ref(false);
@@ -112,7 +118,13 @@ function handleTalk() {
 function handleControl(key) {
   switch (key) {
     case 0:
+      /* 视频播放 */
       refVideo.value.play();
+      // 模拟心率变化
+      timer.value = setInterval(() => {
+        heartRate.value = generateRandomHeartRate();
+        km.value += 0.03;
+      }, 2000); // 每2秒更新一次心率
       break;
     case 1:
       refVideo.value.pause();
@@ -134,6 +146,37 @@ function handleSmallPerson() {
   showPopover.value = false;
   router.push('/pk');
 }
+
+function generateRandomHeartRate() {
+  // 定义正常心率的范围
+  const minHeartRate = 70; // 最低心率（60 bpm）
+  const maxHeartRate = 100; // 最高心率（100 bpm）
+
+  // 生成随机心率值
+  const randomHeartRate = Math.floor(Math.random() * (maxHeartRate - minHeartRate + 1)) + minHeartRate;
+
+  return randomHeartRate;
+}
+onMounted(() => {
+  refVideo.value.addEventListener(
+    'timeupdate',
+    function () {
+      // 获取视频当前时间（以秒为单位）
+      const currentTimeInSeconds = Math.floor(refVideo.value.currentTime);
+      // 将秒数转换为时、分、秒
+      const hours = Math.floor(currentTimeInSeconds / 3600);
+      const minutes = Math.floor((currentTimeInSeconds % 3600) / 60);
+      const seconds = Math.floor(currentTimeInSeconds % 60);
+      // 格式化时间
+      formattedTime.value = `${hours.toString().padStart(2, '0')}：${minutes.toString().padStart(2, '0')}：${seconds.toString().padStart(2, '0')}`;
+
+      if (currentTimeInSeconds >= Math.floor(refVideo.value.duration)) {
+        clearInterval(timer.value);
+      }
+    },
+    false,
+  );
+});
 </script>
 
 <style lang="scss" scoped>
