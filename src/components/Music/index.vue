@@ -3,13 +3,13 @@
     <div class="home-music" @click="handleMusic">
       <img v-show="playMusic" src="@/images/音乐播放.png" alt="" />
       <img v-show="!playMusic" src="@/images/音乐暂停.png" alt="" />
-      <audio ref="refAudio" loop="loop" preload="auto" :src="audio"></audio>
+      <audio ref="refAudio" loop="loop" preload="auto" src="https://video-1318398344.cos.ap-nanjing.myqcloud.com/xiamen.mp4"></audio>
     </div>
   </div>
 </template>
 
 <script setup>
-import audio from '@/images/music.mp3';
+// import audio from '@/images/music.mp3';
 const refAudio = ref(null);
 const playMusic = ref(false);
 
