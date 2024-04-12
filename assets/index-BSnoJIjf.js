@@ -1,0 +1,1 @@
+import{_ as c,c as a,d as s,F as t,o as n,p as _,b as d,a as p,k as r}from"./index-6ibrjUSp.js";const l={},i=e=>(_("data-v-63b2b232"),e=e(),d(),e),m=i(()=>p("div",{class:"food-match"},null,-1));function u(e,f){const o=r;return n(),a(t,null,[s(o),m],64)}const h=c(l,[["render",u],["__scopeId","data-v-63b2b232"]]);export{h as default};
