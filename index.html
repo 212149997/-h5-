@@ -1,27 +1,4 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <!-- 网页图标 -->
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport"
-    content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <!-- 动态设置网页标题 -->
-  <title>
-    <%= title %>
-  </title>
-</head>
-
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
-</body>
-
-</html>
-
-<script>
-  function resize() {
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" href="./favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/><title>马拉松健身全景游戏</title><script type="module" crossorigin src="./assets/index-d-hfItD8.js"></script><link rel="stylesheet" crossorigin href="./assets/index-DunYit3Z.css"></head><body><div id="app"></div></body></html><script>function resize() {
     const root = document.querySelector("#app")
     if (window.orientation == 180 || window.orientation == 0) {
       // alert("竖屏状态！")
@@ -33,5 +10,4 @@
     }
   }
   resize()
-  window.addEventListener('orientationchange', resize);//监听旋转方向
-</script>
+  window.addEventListener('orientationchange', resize);//监听旋转方向</script>
