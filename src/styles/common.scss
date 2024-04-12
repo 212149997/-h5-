@@ -1,12 +1,3 @@
-/* 被js覆盖了，好像没用 */
-// #app {
-//   transform: rotate(90deg); //顺时针旋转90度
-//   transform-origin: 0% 100%;
-//   top: -90vw;
-//   position: absolute;
-//   height: 100vw; //宽高单位互换
-//   width: 100vh;
-// }
 :root:root {
   --van-checkbox-size: 30px;
   --van-cell-font-size: 30px;
@@ -19,4 +10,40 @@
   --van-checkbox-border-color: #000;
   --van-floating-bubble-size: 60px;
   --van-floating-bubble-icon-size: 60px;
+}
+
+//全屏按钮
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+//播放按钮
+video::-webkit-media-controls-play-button {
+  display: none;
+}
+//进度条
+video::-webkit-media-controls-timeline {
+  display: none;
+}
+//观看的当前时间
+video::-webkit-media-controls-current-time-display {
+  display: none;
+}
+//剩余时间
+video::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+//音量按钮
+video::-webkit-media-controls-mute-button {
+  display: none;
+}
+video::-webkit-media-controls-toggle-closed-captions-button {
+  display: none;
+}
+//音量的控制条
+video::-webkit-media-controls-volume-slider {
+  display: none;
+}
+//所有控件
+video::-webkit-media-controls-enclosure {
+  display: none;
 }

@@ -3,7 +3,7 @@
     <div class="home-music" @click="handleMusic">
       <img v-show="playMusic" src="@/images/音乐播放.png" alt="" />
       <img v-show="!playMusic" src="@/images/音乐暂停.png" alt="" />
-      <audio ref="refAudio" loop="loop" preload="auto" src="https://video-1318398344.cos.ap-nanjing.myqcloud.com/xiamen.mp4"></audio>
+      <audio ref="refAudio" loop="loop" preload="auto" src="https://video-1318398344.cos.ap-nanjing.myqcloud.com/music.mp3"></audio>
     </div>
   </div>
 </template>

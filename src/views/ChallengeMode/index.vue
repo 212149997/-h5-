@@ -13,7 +13,15 @@
       <div class="vr">
         <img src="@/images/vr.png" alt="" />
       </div>
-      <video ref="refVideo" src="https://video-1318398344.cos.ap-nanjing.myqcloud.com/xiamen.mp4" preload="auto"></video>
+      <video
+        ref="refVideo"
+        x5-playsinline
+        x5-video-player-type="h5"
+        webkit-playsinline
+        playsinline
+        poster="@/images/视频封面.png"
+        src="https://video-1318398344.cos.ap-nanjing.myqcloud.com/xiamen.mp4"
+        preload="auto"></video>
     </div>
     <div class="bottom">
       <div class="btn-box">
@@ -203,6 +211,8 @@ onMounted(() => {
     justify-content: center;
     height: 100%;
     padding: 80px 100px;
+    z-index: 20;
+    position: relative;
     .block {
       width: 100%;
       height: 100%;
@@ -215,6 +225,7 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       position: relative;
+      z-index: 20;
       .header {
         display: flex;
         align-items: center;
@@ -335,11 +346,14 @@ onMounted(() => {
     position: relative;
     border: 6px solid #5f8cfe;
     overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    touch-action: none;
     .vr {
       position: absolute;
       top: 15px;
       left: 25px;
-      z-index: 2;
+      z-index: 3;
       img {
         width: 36px;
         height: 29px;
@@ -351,6 +365,7 @@ onMounted(() => {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      z-index: 1 !important;
     }
   }
   & > .bottom {

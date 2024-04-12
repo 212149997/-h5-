@@ -28,6 +28,9 @@
               <van-checkbox-group v-model="checkedMode" direction="horizontal">
                 <van-checkbox name="1" shape="square">跑步</van-checkbox>
                 <van-checkbox name="2" shape="square">游泳</van-checkbox>
+                <van-checkbox name="3" shape="square">瑜伽</van-checkbox>
+                <van-checkbox name="4" shape="square">自行车</van-checkbox>
+                <van-checkbox name="5" shape="square">球类运动</van-checkbox>
               </van-checkbox-group>
             </template>
           </van-field>
@@ -48,7 +51,7 @@ const password = ref('Inspectorrrrrr');
 const age = ref(18);
 const checkedSex = ref('1');
 const checkedFitness = ref('2');
-const checkedMode = ref(['1']);
+const checkedMode = ref(['1', '3']);
 
 function onSubmit() {
   router.push('/partition');
@@ -79,6 +82,12 @@ function onSubmit() {
         font-weight: bold;
         display: flex;
         align-items: center;
+      }
+      .van-field__value {
+        max-width: 380px;
+      }
+      .van-checkbox {
+        margin-bottom: 15px;
       }
     }
     ::v-deep(.van-cell-group) {
