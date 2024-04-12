@@ -13,7 +13,7 @@
       <div class="vr">
         <img src="@/images/vr.png" alt="" />
       </div>
-      <video ref="refVideo" :src="video" preload="auto"></video>
+      <video ref="refVideo" src="https://video-1318398344.cos.ap-nanjing.myqcloud.com/xiamen.mp4" preload="auto"></video>
     </div>
     <div class="bottom">
       <div class="btn-box">
@@ -90,7 +90,7 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import video from '@/images/厦门.mp4';
+// import video from '@/images/厦门.mp4';
 import audio from '@/images/厦门马拉松景点介绍.mp3';
 import { isAndroid } from '@/utils';
 
