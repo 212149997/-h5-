@@ -17,8 +17,8 @@
   background-size: 100% 100%;
   overflow: hidden;
   p {
-    padding: 180px 250px 0 200px;
-    // line-height: 42px;
+    padding: 190px 250px 0 200px;
+    line-height: 36px;
     color: #000;
     font-weight: bold;
   }

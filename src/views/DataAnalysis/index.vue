@@ -30,9 +30,9 @@
 </template>
 
 <script setup>
-import img1 from '@/images/城市点亮.png';
-import img2 from '@/images/心率图表.png';
-import img3 from '@/images/跑步图表.png';
+import img2 from '@/images/城市点亮.png';
+import img3 from '@/images/心率图表.png';
+import img1 from '@/images/跑步图表.png';
 
 import { computed } from 'vue';
 
@@ -45,7 +45,6 @@ const dialogImg = computed(() => {
 
 function handleBtn(key) {
   active.value = key;
-  console.log(active.value);
   showTrack.value = true;
   switch (key) {
     case 0:

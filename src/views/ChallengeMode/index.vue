@@ -4,7 +4,7 @@
     <div class="top">
       <div class="time">{{ formattedTime }}</div>
       <div class="love">
-        <img src="@/images/爱心.png" alt="" />
+        <img v-show="!showRes" src="@/images/爱心.png" alt="" />
         <span>{{ heartRate }}次/分</span>
       </div>
       <div class="km">{{ km.toFixed(2) }}km</div>
@@ -14,6 +14,7 @@
         <img src="@/images/vr.png" alt="" />
       </div>
       <video
+        v-show="!showRes"
         ref="refVideo"
         x5-playsinline
         x5-video-player-type="h5"
@@ -37,7 +38,7 @@
         </div>
         <div class="right">
           <van-popover v-model:show="showPopover" placement="top">
-            <div class="friend-box" :class="isAndroid && 'friend-box-android'">
+            <div class="friend-box" :class="'friend-box-android'">
               <img src="@/images/弹框.png" alt="" />
               <div class="small-person">
                 <img src="@/images/小人.png" alt="" @click="handleSmallPerson" />
@@ -100,7 +101,7 @@
 import { onMounted } from 'vue';
 // import video from '@/images/厦门.mp4';
 import audio from '@/images/厦门马拉松景点介绍.mp3';
-import { isAndroid } from '@/utils';
+//import { isAndroid } from '@/utils';
 
 const refAudio = ref(null);
 const formattedTime = ref('00：00：00');
@@ -205,90 +206,101 @@ onMounted(() => {
   :deep(.van-overlay) {
     z-index: 10;
   }
-  .wrapper1 {
+  .van-overlay {
+    z-index: 9999999;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    width: 100%;
     height: 100%;
-    padding: 80px 100px;
-    z-index: 20;
-    position: relative;
-    .block {
+    .wrapper1 {
       width: 100%;
       height: 100%;
-      font-weight: bold;
-      background-color: #faebeb;
-      padding: 20px 50px;
-      padding-bottom: unset;
-      font-size: 40px;
-      border-radius: 55px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 100px;
       position: relative;
-      z-index: 20;
-      .header {
+      z-index: 9999999;
+      .block {
+        width: 100%;
+        height: 100%;
+        font-weight: bold;
+        background-color: #faebeb;
+        padding: 20px 50px;
+        padding-bottom: unset;
+        font-size: 40px;
+        border-radius: 55px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .item {
+        flex-direction: column;
+        position: relative;
+        z-index: 9999999;
+
+        .header {
           display: flex;
-          flex-direction: column;
-          justify-content: center;
           align-items: center;
-          span:first-child {
-            margin-bottom: 30px;
-          }
-        }
-      }
-      .middle {
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        .left {
-          width: 451px;
-          height: 313px;
-          object-fit: contain;
-          margin-right: 30px;
-        }
-        .right {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          & > div {
+          justify-content: space-between;
+          .item {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            img {
-              width: 62px;
-              height: 62px;
-              object-fit: contain;
-              margin-left: 30px;
+            span:first-child {
+              margin-bottom: 30px;
             }
           }
-          & > span {
-            margin-top: 30px;
-            font-size: 70px;
-          }
         }
-      }
-      .bottom {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        margin-top: 20px;
-        .left {
-          img {
-            width: 75px;
-            height: 60px;
+        .middle {
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          .left {
+            width: 451px;
+            height: 313px;
             object-fit: contain;
             margin-right: 30px;
           }
+          .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & > div {
+              display: flex;
+              align-items: center;
+              img {
+                width: 62px;
+                height: 62px;
+                object-fit: contain;
+                margin-left: 30px;
+              }
+            }
+            & > span {
+              margin-top: 30px;
+              font-size: 70px;
+            }
+          }
         }
-        .right {
-          img {
-            width: 95px;
-            height: 80px;
-            object-fit: contain;
+        .bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          margin-top: 20px;
+          .left {
+            img {
+              width: 75px;
+              height: 60px;
+              object-fit: contain;
+              margin-right: 30px;
+            }
+          }
+          .right {
+            img {
+              width: 95px;
+              height: 80px;
+              object-fit: contain;
+            }
           }
         }
       }
