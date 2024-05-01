@@ -1,5 +1,4 @@
 <template>
-  <Back />
   <div class="pk">
     <div class="content">
       <div class="left">

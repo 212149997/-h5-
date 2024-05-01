@@ -1,5 +1,4 @@
 <template>
-  <Back />
   <div class="running-instructor">
     <div class="nav">
       <span v-for="(item, i) in state" :key="i" :class="activeNav === i && 'active'" @click="activeNav = i">{{ item.navTitle }}</span>

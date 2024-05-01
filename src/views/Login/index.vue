@@ -41,7 +41,6 @@
       </van-form>
     </div>
   </div>
-  <Back />
 </template>
 
 <script setup>
@@ -54,7 +53,9 @@ const checkedFitness = ref('2');
 const checkedMode = ref(['1', '3']);
 
 function onSubmit() {
-  router.push('/partition');
+  const data = { m: 361, km: 305.52, runIcon: 150 };
+  sessionStorage.setItem('hasUser', JSON.stringify(data));
+  router.back();
 }
 </script>
 

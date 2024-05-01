@@ -1,5 +1,4 @@
 <template>
-  <Back />
   <div class="food-match"></div>
 </template>
 

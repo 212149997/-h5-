@@ -1,12 +1,11 @@
 <template>
-  <Back />
   <div class="data-analysis">
     <div class="title">
       <img src="@/images/数据分析标题.png" alt="" />
     </div>
     <div class="top">
       <img class="btn1" src="@/images/总跑步btn.png" alt="" @click="handleBtn(0)" />
-      <img class="btn2" src="@/images/点亮btn.png" alt="" @click="handleBtn(1)" />
+      <img class="btn2" src="@/images/已获得奖牌.png" alt="" @click="handleBtn(1)" />
     </div>
     <div class="middle">
       <img class="btn" src="@/images/心率btn.png" alt="" @click="handleBtn(2)" />
@@ -30,7 +29,7 @@
 </template>
 
 <script setup>
-import img2 from '@/images/城市点亮.png';
+import img2 from '@/images/点亮奖牌.png';
 import img3 from '@/images/心率图表.png';
 import img1 from '@/images/跑步图表.png';
 

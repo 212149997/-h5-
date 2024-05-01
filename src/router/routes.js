@@ -32,15 +32,6 @@ export default [
     component: () => import('@/views/Partition/index.vue'),
   },
   {
-    path: '/introduction-game',
-    name: 'IntroductionGame',
-    meta: {
-      title: '游戏介绍',
-      keepAlive: true,
-    },
-    component: () => import('@/views/IntroductionGame/index.vue'),
-  },
-  {
     path: '/my',
     name: 'My',
     meta: {
@@ -50,13 +41,13 @@ export default [
     component: () => import('@/views/My/index.vue'),
   },
   {
-    path: '/selection-mode',
-    name: 'SelectionMode',
+    path: '/selection-track',
+    name: 'SelectionTrack',
     meta: {
-      title: '选择模式',
+      title: '选择赛道',
       keepAlive: true,
     },
-    component: () => import('@/views/SelectionMode/index.vue'),
+    component: () => import('@/views/SelectionTrack/index.vue'),
   },
   {
     path: '/challenge-mode',
@@ -119,6 +110,42 @@ export default [
       keepAlive: true,
     },
     component: () => import('@/views/DataAnalysis/index.vue'),
+  },
+  {
+    path: '/online-competition',
+    name: 'OnlineCompetition',
+    meta: {
+      title: '线上赛事',
+      keepAlive: true,
+    },
+    component: () => import('@/views/OnlineCompetition/index.vue'),
+  },
+  {
+    path: '/start-run',
+    name: 'StartRun',
+    meta: {
+      title: '开始跑步',
+      keepAlive: true,
+    },
+    component: () => import('@/views/StartRun/index.vue'),
+  },
+  {
+    path: '/introduction-competition',
+    name: 'IntroductionCompetition',
+    meta: {
+      title: '赛事介绍',
+      keepAlive: true,
+    },
+    component: () => import('@/views/IntroductionCompetition/index.vue'),
+  },
+  {
+    path: '/improve-competition-information',
+    name: 'ImproveCompetitionInformation',
+    meta: {
+      title: '完善赛事信息',
+      keepAlive: true,
+    },
+    component: () => import('@/views/ImproveCompetitionInformation/index.vue'),
   },
   {
     path: '/:pathMatch(.*)*', // 防止浏览器刷新时路由未找到警告提示:No match found for location with path "/xxx"

@@ -1,5 +1,4 @@
 <template>
-  <Back />
   <div class="train-mode">
     <div class="title">
       <img src="@/images/train-title.png" alt="" />

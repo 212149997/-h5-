@@ -1,5 +1,4 @@
 <template>
-  <Back />
   <div class="individuation">
     <div class="title">
       <span>训练强度</span>

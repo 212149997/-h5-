@@ -1,5 +1,4 @@
 <template>
-  <Back />
   <div class="challenge-mode">
     <div class="top">
       <div class="time">{{ formattedTime }}</div>

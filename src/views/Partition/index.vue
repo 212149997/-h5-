@@ -1,25 +1,33 @@
 <template>
   <div class="partition">
     <div class="partition-btn">
-      <img src="@/images/游戏介绍.png" alt="" @click="handleBtn(0)" />
-      <img src="@/images/开始体验.png" alt="" @click="handleBtn(1)" />
-      <img src="@/images/个人中心.png" alt="" @click="handleBtn(2)" />
+      <img v-for="(item, i) in btnArr" :key="i" :src="item" alt="" @click="handleBtn(i)" />
     </div>
   </div>
-  <Back />
 </template>
 
 <script setup>
+import partitionBtn1 from '@/images/partition-btn1.png';
+import partitionBtn2 from '@/images/partition-btn2.png';
+import partitionBtn3 from '@/images/partition-btn3.png';
+import partitionBtn4 from '@/images/partition-btn4.png';
+
 const router = useRouter();
+
+const btnArr = [partitionBtn1, partitionBtn2, partitionBtn3, partitionBtn4];
+
 function handleBtn(key) {
   switch (key) {
     case 0:
-      router.push('/introduction-game');
+      router.push('/train-mode');
       break;
     case 1:
-      router.push('/selection-mode');
+      router.push('/selection-track');
       break;
     case 2:
+      router.push('/online-competition');
+      break;
+    case 3:
       router.push('/my');
       break;
   }
@@ -35,20 +43,16 @@ function handleBtn(key) {
   overflow: hidden;
   &-btn {
     display: flex;
-    flex-direction: column;
-    margin-left: 250px;
-    margin-top: 100px;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 100px 230px;
+    margin-left: 350px;
     img {
       width: 300px;
       height: 150px;
       object-fit: contain;
       margin-bottom: 20px;
-      &:nth-child(2) {
-        margin-left: 300px;
-      }
-      &:nth-child(3) {
-        margin-left: 600px;
-      }
     }
   }
 }

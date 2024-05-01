@@ -1,23 +1,27 @@
 <template>
-  <Back />
   <div class="my">
     <div class="my-content">
       <div class="header">
         <div class="left">
           <img class="my-icon" src="@/images/my-icon.png" alt="" />
-          <img class="avatar" src="@/images/头像.png" alt="" />
-          <div class="info">
-            <span class="name">Inspectorrrrrr</span>
-            <div>
-              <div class="num-box">
-                <span>关注</span>
-                <span>3</span>
-              </div>
-              <div class="num-box">
-                <span>粉丝</span>
-                <span>2</span>
+          <div v-if="hasUser.m !== 0" class="user">
+            <img class="avatar" src="@/images/头像.png" alt="" />
+            <div class="info">
+              <span class="name">Inspectorrrrrr</span>
+              <div>
+                <div class="num-box">
+                  <span>关注</span>
+                  <span>3</span>
+                </div>
+                <div class="num-box">
+                  <span>粉丝</span>
+                  <span>2</span>
+                </div>
               </div>
             </div>
+          </div>
+          <div v-else class="login" @click="handleLogin">
+            <img src="@/images/login-btn.png" alt="" />
           </div>
         </div>
         <div class="right">
@@ -29,15 +33,15 @@
         <div class="title">我的数据</div>
         <div class="content">
           <div class="item">
-            <span>0分钟</span>
+            <span>{{ hasUser.m }}分钟</span>
             <span>本周跑步</span>
           </div>
           <div class="item">
-            <span>00.00km</span>
+            <span>{{ hasUser.km }}km</span>
             <span>跑步距离</span>
           </div>
           <div class="item">
-            <span>0个</span>
+            <span>{{ hasUser.runIcon }}个</span>
             <span>跑步币</span>
           </div>
           <div class="line" @click="handleLine">
@@ -117,11 +121,18 @@
 </template>
 
 <script setup>
+import { onActivated } from 'vue';
+
 const message = ref('');
 const checkedResolution = ref('1');
 const checkeDown = ref('1');
 const showSetting = ref(false);
 const showGift = ref(false);
+const hasUser = ref({
+  m: 0,
+  km: '00.00',
+  runIcon: 0,
+});
 
 const router = useRouter();
 
@@ -141,6 +152,13 @@ function handleLogout() {
 function handleLine() {
   router.push('/data-analysis');
 }
+function handleLogin() {
+  router.push('/login');
+}
+
+onActivated(() => {
+  sessionStorage.getItem('hasUser') && (hasUser.value = JSON.parse(sessionStorage.getItem('hasUser')));
+});
 </script>
 
 <style lang="scss" scoped>
@@ -167,6 +185,16 @@ function handleLine() {
         width: 37px;
         height: 53px;
         margin-right: 15px;
+      }
+      .user {
+        display: flex;
+      }
+      .login {
+        img {
+          width: 300px;
+          height: 90px;
+          object-fit: contain;
+        }
       }
       .avatar {
         width: 110px;

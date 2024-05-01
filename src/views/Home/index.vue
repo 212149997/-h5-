@@ -14,7 +14,7 @@
 const router = useRouter();
 
 function handleStart() {
-  router.push('/login');
+  router.push('/partition');
 }
 </script>
 
