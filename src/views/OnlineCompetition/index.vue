@@ -1,16 +1,18 @@
 <template>
   <div class="online-competition">
-    <div class="item">
-      <img src="@/images/线上赛事/box1.png" alt="" />
-      <div class="btn" @click="handleRun">
-        <img src="@/images/线上赛事/start-run.png" alt="" />
+    <div class="content">
+      <div class="item">
+        <img src="@/images/线上赛事/box1.png" alt="" />
+        <div class="btn" @click="handleRun">
+          <img src="@/images/线上赛事/start-run.png" alt="" />
+        </div>
       </div>
-    </div>
-    <div class="item" @click="handleApply">
-      <img src="@/images/线上赛事/box2.png" alt="" />
-    </div>
-    <div class="item">
-      <img src="@/images/线上赛事/box3.png" alt="" />
+      <div class="item" @click="handleApply">
+        <img src="@/images/线上赛事/box2.png" alt="" />
+      </div>
+      <div class="item">
+        <img src="@/images/线上赛事/box3.png" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -32,14 +34,18 @@ function handleApply() {
 <style lang="scss" scoped>
 .online-competition {
   width: 100%;
+  height: 100%;
   background-color: #fbd1db;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-y: scroll;
   padding: 50px 0;
   padding-bottom: unset;
+  .content {
+    height: 100%;
+    overflow: scroll;
+  }
   .item {
     margin-bottom: 50px;
     position: relative;

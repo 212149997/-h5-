@@ -29,7 +29,8 @@
   <van-overlay :show="endShow" @click="endShow = false">
     <div class="wrapper">
       <div class="block">
-        <img src="@/images/线上赛事/结束弹窗.png" alt="" />
+        <img v-if="km < 3" src="@/images/线上赛事/结束弹窗.png" alt="" />
+        <img v-else src="@/images/线上赛事/finish.png" alt="" @click="$router.push('/partition')" />
       </div>
     </div>
   </van-overlay>

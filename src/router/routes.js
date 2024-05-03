@@ -125,7 +125,6 @@ export default [
     name: 'StartRun',
     meta: {
       title: '开始跑步',
-      keepAlive: true,
     },
     component: () => import('@/views/StartRun/index.vue'),
   },

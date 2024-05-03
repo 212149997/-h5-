@@ -63,7 +63,7 @@ const list = ref([
   flex-direction: column;
   overflow: hidden;
   background-color: #fbd1db;
-  padding: 40px;
+  padding: 40px 0;
   .title {
     font-size: 40px;
     font-weight: bold;
@@ -79,13 +79,21 @@ const list = ref([
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    overflow-y: scroll;
+    flex-grow: 1;
     .item {
       display: flex;
       align-items: center;
       margin-bottom: 50px;
+      &:nth-child(3) {
+        margin-bottom: unset;
+      }
+      &:nth-child(4) {
+        margin-bottom: unset;
+      }
       .left {
-        margin-right: 50px;
+        margin-right: 40px;
         width: 350px;
         height: 250px;
         img {

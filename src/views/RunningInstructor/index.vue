@@ -105,12 +105,12 @@ const list = computed(() => {
   background-color: #fbd1db;
   display: flex;
   .nav {
-    flex: 3;
+    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-size: 45px;
+    font-size: 40px;
     font-weight: bold;
     span {
       flex: 1;
@@ -118,6 +118,7 @@ const list = computed(() => {
       justify-content: center;
       align-items: center;
       color: rgba($color: #fff, $alpha: 0.6);
+      white-space: nowrap;
     }
     .active {
       color: #000;
