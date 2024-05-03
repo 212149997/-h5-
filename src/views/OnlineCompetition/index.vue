@@ -2,16 +2,16 @@
   <div class="online-competition">
     <div class="content">
       <div class="item">
-        <img src="@/images/线上赛事/box1.png" alt="" />
+        <img src="@/images/线上赛事/box1.svg" alt="" />
         <div class="btn" @click="handleRun">
-          <img src="@/images/线上赛事/start-run.png" alt="" />
+          <img src="@/images/线上赛事/start-run.svg" alt="" />
         </div>
       </div>
       <div class="item" @click="handleApply">
-        <img src="@/images/线上赛事/box2.png" alt="" />
+        <img src="@/images/线上赛事/box2.svg" alt="" />
       </div>
       <div class="item">
-        <img src="@/images/线上赛事/box3.png" alt="" />
+        <img src="@/images/线上赛事/box3.svg" alt="" />
       </div>
     </div>
   </div>
@@ -49,14 +49,19 @@ function handleApply() {
   .item {
     margin-bottom: 50px;
     position: relative;
-    img {
+    & > img {
       object-fit: contain;
+      width: 800px;
     }
     &:nth-child(1) {
       .btn {
         position: absolute;
-        bottom: 15px;
+        bottom: 20px;
         left: 40px;
+        & > img {
+          object-fit: contain;
+          width: 350px;
+        }
       }
     }
   }

@@ -20,7 +20,7 @@
 const router = useRouter();
 
 function handleHome() {
-  router.push('/selection-mode');
+  router.push('/partition');
 }
 </script>
 

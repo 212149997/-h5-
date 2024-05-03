@@ -1,1 +1,0 @@
-import{_ as c,c as e,o}from"./index-C8rMSBd8.js";const t={},s={class:"food-match"};function _(a,n){return o(),e("div",s)}const d=c(t,[["render",_],["__scopeId","data-v-cb8063dc"]]);export{d as default};

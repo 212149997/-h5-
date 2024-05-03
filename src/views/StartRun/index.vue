@@ -22,8 +22,8 @@
       </div>
     </div>
     <div class="bottom">
-      <img src="@/images/线上赛事/begin.png" alt="" @click="handleBtn(0)" />
-      <img src="@/images/线上赛事/end.png" alt="" @click="handleBtn(1)" />
+      <img src="@/images/线上赛事/begin.svg" alt="" @click="handleBtn(0)" />
+      <img src="@/images/线上赛事/end.svg" alt="" @click="handleBtn(1)" />
     </div>
   </div>
   <van-overlay :show="endShow" @click="endShow = false">

@@ -1,8 +1,8 @@
 <template>
   <div class="introduction-competition">
     <div class="left">
-      <img src="@/images/线上赛事/2024年生物多样性日线上跑.png" alt="" />
-      <img src="@/images/线上赛事/大图.png" alt="" />
+      <img src="@/images/线上赛事/2024年生物多样性日线上跑.svg" alt="" />
+      <img src="@/images/线上赛事/大图.svg" alt="" />
     </div>
     <div class="right">
       <div class="top">
@@ -10,15 +10,15 @@
       </div>
       <div class="bottom">
         <div>
-          <img src="@/images/线上赛事/小图.png" alt="" />
+          <img src="@/images/线上赛事/小图.svg" alt="" />
         </div>
         <div>
-          <img src="@/images/线上赛事/name1.png" alt="" />
-          <img src="@/images/线上赛事/name2.png" alt="" />
+          <img src="@/images/线上赛事/name1.svg" alt="" />
+          <img src="@/images/线上赛事/name2.svg" alt="" />
         </div>
         <div>
-          <img src="@/images/线上赛事/去报名.png" alt="" @click="handleBtn(0)" />
-          <img src="@/images/线上赛事/付费报名.png" alt="" @click="handleBtn(1)" />
+          <img src="@/images/线上赛事/去报名.svg" alt="" @click="handleBtn(0)" />
+          <img src="@/images/线上赛事/付费报名.svg" alt="" @click="handleBtn(1)" />
         </div>
       </div>
     </div>

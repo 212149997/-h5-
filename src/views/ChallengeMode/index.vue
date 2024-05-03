@@ -151,7 +151,7 @@ function handleControl(key) {
 
 function handleHome() {
   showRes.value = false;
-  router.back();
+  router.push('/partition');
 }
 
 function handleSmallPerson() {

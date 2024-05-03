@@ -1,5 +1,5 @@
 <template>
-  <div class="selection-mode">
+  <div class="selection-track">
     <div class="block">
       <div class="title">
         <img src="@/images/track/请选择跑道.png" alt="" />
@@ -31,7 +31,7 @@ function handleImg() {
 </script>
 
 <style lang="scss" scoped>
-.selection-mode {
+.selection-track {
   width: 100%;
   height: 100%;
   display: flex;
