@@ -7,7 +7,7 @@
       <div class="left">
         <img src="@/images/线上赛事/参赛者.svg" alt="" />
         <div class="project">
-          <img src="@/images/线上赛事/参赛项目.png" alt="" />
+          <img src="@/images/线上赛事/参赛项目.svg" alt="" />
           <van-radio-group v-model="checkedFitness" direction="horizontal">
             <van-radio name="1"></van-radio>
             <van-radio name="2"></van-radio>
@@ -17,7 +17,7 @@
       </div>
       <div class="right">
         <img v-if="$route.query.pay" src="@/images/线上赛事/付费.svg" alt="" @click="handlePay(1)" />
-        <img v-else src="@/images/线上赛事/免费.png" alt="" />
+        <img v-else src="@/images/线上赛事/免费.svg" alt="" />
         <img src="@/images/线上赛事/立即报名.svg" alt="" @click="handleApply(2)" />
       </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="wrapper">
       <div class="block">
         <img v-if="flag === 1" src="@/images/线上赛事/收货地址.svg" alt="" />
-        <img v-if="flag === 2" src="@/images/线上赛事/报名成功.png" alt="" />
+        <img v-if="flag === 2" src="@/images/线上赛事/报名成功.svg" alt="" />
       </div>
     </div>
   </van-overlay>

@@ -60,7 +60,7 @@ function handleApply() {
         left: 40px;
         & > img {
           object-fit: contain;
-          width: 350px;
+          width: 200px;
         }
       }
     }
