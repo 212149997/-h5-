@@ -51,7 +51,14 @@ const kilocalorie = ref(0);
 const pace = ref(`0'00''`);
 
 function handleMap() {
-  router.push('/map');
+  router.push({
+    path: '/map',
+    query: {
+      km: km.value,
+      pace: pace.value,
+      time: formatTime(time.value),
+    },
+  });
 }
 
 function handleBtn(key) {
