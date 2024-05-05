@@ -22,3 +22,14 @@ export function getRandomNumber(min = 0, max = 1, isInteger = true) {
     return Math.random() * (max - min) + min;
   }
 }
+
+export function initGaoDeSDK(callback) {
+  const script = document.createElement('script');
+  script.src = 'https://webapi.amap.com/loader.js';
+  script.async = true;
+  script.defer = true;
+  script.onload = () => {
+    callback && callback();
+  };
+  document.body.appendChild(script);
+}

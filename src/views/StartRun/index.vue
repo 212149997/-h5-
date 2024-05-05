@@ -5,7 +5,7 @@
         <span>{{ km.toFixed(2) }}</span>
         <span>公里</span>
       </div>
-      <img src="@/images/线上赛事/address.png" alt="" />
+      <img src="@/images/线上赛事/address.png" alt="" @click="handleMap" />
     </div>
     <div class="middle">
       <div class="item">
@@ -39,7 +39,9 @@
 <script setup>
 import { getRandomNumber } from '@/utils';
 import { onUnmounted } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const timer = ref(null);
 const endShow = ref(false);
 
@@ -47,6 +49,10 @@ const time = ref(0);
 const km = ref(0);
 const kilocalorie = ref(0);
 const pace = ref(`0'00''`);
+
+function handleMap() {
+  router.push('/map');
+}
 
 function handleBtn(key) {
   switch (key) {
