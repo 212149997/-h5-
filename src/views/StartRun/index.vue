@@ -38,6 +38,7 @@
 
 <script setup>
 import { getRandomNumber } from '@/utils';
+import { onUnmounted } from 'vue';
 
 const timer = ref(null);
 const endShow = ref(false);
@@ -87,6 +88,10 @@ function generateRunningPace() {
 
   return paceString;
 }
+
+onUnmounted(() => {
+  timer.value && clearInterval(timer.value);
+});
 </script>
 
 <style lang="scss" scoped>

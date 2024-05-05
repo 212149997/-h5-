@@ -142,7 +142,6 @@ export default [
     name: 'ImproveCompetitionInformation',
     meta: {
       title: '完善赛事信息',
-      keepAlive: true,
     },
     component: () => import('@/views/ImproveCompetitionInformation/index.vue'),
   },

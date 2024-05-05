@@ -97,7 +97,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 // import video from '@/images/厦门.mp4';
 import audio from '@/images/厦门马拉松景点介绍.mp3';
 //import { isAndroid } from '@/utils';
@@ -137,14 +137,15 @@ function handleControl(key) {
     case 1:
       /* 暂停 */
       refVideo.value.pause();
-      clearInterval(timer.value);
+      timer.value && clearInterval(timer.value);
       break;
     case 2:
       /* 结束 */
       showRes.value = true;
       refVideo.value.pause(); // 暂停视频
+      refAudio.value.pause(); // 暂停讲解
       // refVideo.value.currentTime = 0; // 将视频时间设置为0，即回到开头
-      clearInterval(timer.value);
+      timer.value && clearInterval(timer.value);
       break;
   }
 }
@@ -188,6 +189,10 @@ onMounted(() => {
     },
     false,
   );
+});
+
+onUnmounted(() => {
+  timer.value && clearInterval(timer.value);
 });
 </script>
 
