@@ -1,17 +1,19 @@
 <template>
-  <div id="map"></div>
-  <div class="banner">
-    <div class="item">
-      <span>{{ $route.query.km }}</span>
-      <span>公里</span>
-    </div>
-    <div class="item">
-      <span>{{ $route.query.time }}</span>
-      <span>用时</span>
-    </div>
-    <div class="item">
-      <span>{{ $route.query.pace }}</span>
-      <span>实时配速</span>
+  <div class="map">
+    <div id="map"></div>
+    <div class="banner">
+      <div class="item">
+        <span>{{ $route.query.km }}</span>
+        <span>公里</span>
+      </div>
+      <div class="item">
+        <span>{{ $route.query.time }}</span>
+        <span>用时</span>
+      </div>
+      <div class="item">
+        <span>{{ $route.query.pace }}</span>
+        <span>实时配速</span>
+      </div>
     </div>
   </div>
 </template>
@@ -54,34 +56,41 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-#map {
+.map {
   width: 100%;
   height: 100%;
-}
-.banner {
-  position: fixed;
-  background-color: #f6f6f6;
-  width: 800px;
-  height: 150px;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  z-index: calc(infinity);
-  .item {
+  position: relative;
+  #map {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+  }
+  .banner {
+    position: absolute;
+    background-color: #f6f6f6;
+    width: 800px;
+    height: 150px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    span:first-child {
-      font-weight: bold;
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-    span:last-child {
-      color: #94989c;
+    justify-content: space-around;
+    z-index: calc(infinity);
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      span:first-child {
+        font-weight: bold;
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+      span:last-child {
+        color: #94989c;
+      }
     }
   }
 }
