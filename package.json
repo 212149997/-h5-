@@ -12,6 +12,7 @@
     "deploy": "pnpm run build:pro && git add . && git commit -m \"gitee自动部署\" && git push -u origin master && git subtree push --prefix dist-pro origin gh-pages"
   },
   "dependencies": {
+    "pinia": "^2.1.7",
     "vant": "^4.8.8",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

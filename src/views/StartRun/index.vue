@@ -37,73 +37,59 @@
 </template>
 
 <script setup>
-import { getRandomNumber } from '@/utils';
-import { onUnmounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { useRunStore } from '@/store/run.js';
+import { storeToRefs } from 'pinia';
+import { generateRunningPace, formatTime, getRandomNumber } from '@/utils';
+
+const runStore = useRunStore(); //实例化
+const { km, pace, time, kilocalorie } = storeToRefs(runStore);
 
 const router = useRouter();
 const timer = ref(null);
 const endShow = ref(false);
 
-const time = ref(0);
-const km = ref(0);
-const kilocalorie = ref(0);
-const pace = ref(`0'00''`);
-
 function handleMap() {
-  router.push({
-    path: '/map',
-    query: {
-      km: km.value,
-      pace: pace.value,
-      time: formatTime(time.value),
-    },
-  });
+  router.push('/map');
 }
 
 function handleBtn(key) {
   switch (key) {
     case 0:
-      if (timer.value) return;
-      timer.value = setInterval(() => {
-        km.value += 0.03;
-        time.value += 1;
-        kilocalorie.value += getRandomNumber(0.9, 1.4, false);
-        pace.value = generateRunningPace();
-      }, 1000);
+      timerRun();
+      sessionStorage.setItem('runFlag', 1);
       break;
     case 1:
-      timer.value && clearInterval(timer.value);
+      clearInterval(timer.value);
       timer.value = null;
       endShow.value = true;
+      sessionStorage.setItem('runFlag', 0);
       break;
   }
 }
 
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60)
-    .toString()
-    .padStart(2, '0');
-  const remainingSeconds = (seconds % 60).toString().padStart(2, '0');
-  return `${minutes}:${remainingSeconds}`;
+function timerRun() {
+  if (timer.value) return;
+  timer.value = setInterval(() => {
+    runStore.$patch({
+      km: km.value + 0.03,
+      pace: generateRunningPace(),
+      time: time.value + 1,
+      kilocalorie: kilocalorie.value + getRandomNumber(0.9, 1.4, false),
+    });
+  }, 1000);
 }
 
-function generateRunningPace() {
-  // 生成每公里的时间，范围在 5 分钟到 10 分钟之间
-  let minutes = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
-  let seconds = Math.floor(Math.random() * 60);
-
-  // 格式化时间，确保秒数显示为两位数
-  seconds = seconds < 10 ? '0' + seconds : seconds;
-
-  // 构建跑步速度字符串
-  let paceString = minutes + "'" + seconds + "''";
-
-  return paceString;
-}
+onMounted(() => {
+  if (sessionStorage.getItem('runFlag') == 1) {
+    timerRun();
+  }
+});
 
 onUnmounted(() => {
-  timer.value && clearInterval(timer.value);
+  clearInterval(timer.value);
+  timer.value = null;
 });
 </script>
 

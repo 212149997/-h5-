@@ -33,3 +33,25 @@ export function initGaoDeSDK(callback) {
   };
   document.body.appendChild(script);
 }
+
+export function generateRunningPace() {
+  // 生成每公里的时间，范围在 5 分钟到 10 分钟之间
+  let minutes = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+  let seconds = Math.floor(Math.random() * 60);
+
+  // 格式化时间，确保秒数显示为两位数
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  // 构建跑步速度字符串
+  let paceString = minutes + "'" + seconds + "''";
+
+  return paceString;
+}
+
+export function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60)
+    .toString()
+    .padStart(2, '0');
+  const remainingSeconds = (seconds % 60).toString().padStart(2, '0');
+  return `${minutes}:${remainingSeconds}`;
+}

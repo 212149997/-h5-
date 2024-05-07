@@ -3,15 +3,15 @@
     <div id="map"></div>
     <div class="banner">
       <div class="item">
-        <span>{{ $route.query.km }}</span>
+        <span>{{ km.toFixed(2) }}</span>
         <span>公里</span>
       </div>
       <div class="item">
-        <span>{{ $route.query.time }}</span>
+        <span>{{ formatTime(time) }}</span>
         <span>用时</span>
       </div>
       <div class="item">
-        <span>{{ $route.query.pace }}</span>
+        <span>{{ pace }}</span>
         <span>实时配速</span>
       </div>
     </div>
@@ -20,8 +20,15 @@
 
 <script setup>
 import { initGaoDeSDK } from '@/utils';
-import { onMounted } from 'vue';
+import { onActivated, onMounted } from 'vue';
+import { useRunStore } from '@/store/run.js';
+import { storeToRefs } from 'pinia';
+import { generateRunningPace, formatTime, getRandomNumber } from '@/utils';
 
+const runStore = useRunStore(); //实例化
+const { km, pace, time, kilocalorie } = storeToRefs(runStore);
+
+const timer = ref(null);
 const map = ref();
 
 onMounted(() => {
@@ -52,6 +59,28 @@ onMounted(() => {
         console.error(e); //加载错误提示
       });
   });
+});
+
+onActivated(() => {
+  if (sessionStorage.getItem('runFlag') == 1) {
+    timer.value = setInterval(() => {
+      runStore.$patch({
+        km: km.value + 0.03,
+        pace: generateRunningPace(),
+        time: time.value + 1,
+        kilocalorie: kilocalorie.value + getRandomNumber(0.9, 1.4, false),
+      });
+    }, 1000);
+  }
+});
+
+onDeactivated(() => {
+  if (sessionStorage.getItem('runFlag') == 0) {
+    return;
+  }
+  sessionStorage.setItem('runFlag', 1);
+  clearInterval(timer.value);
+  timer.value = null;
 });
 </script>
 
